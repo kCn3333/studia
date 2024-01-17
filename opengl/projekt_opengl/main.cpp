@@ -1,14 +1,14 @@
-/*      o--------------------------o         
+	/*      o--------------------------o         
 		| Model ukladu slonecznego | 
 		o--------------------------o
-		|						   |
-		|		VC++   OpenGL      |
-		|						   |
+		|			   |
+		|	VC++   OpenGL      |
+		|			   |
 		o--------------------------o
-		|	   Pawe³  Kwiecieñ     |
+		|      Pawel  KwiecieÃ±     |
 		o--------------------------o
 				   06/2o11
-*/
+	*/
 //--------------------------------------------------------------------------------------------------
 #include<windows.h>                
 #include<gl\gl.h>            
@@ -70,7 +70,7 @@ __stdcall WinMain(HINSTANCE hInst,HINSTANCE hPrevInst,LPSTR lpCmdLine,int nShowC
 
 	}
 									// tworzenie okna
-	hWnd=CreateWindow("MyClass","Uklad Sloneczny  - Pawe³ Kwiecieñ -",WS_OVERLAPPEDWINDOW|WS_CLIPCHILDREN|WS_CLIPSIBLINGS,10,10,800,640,NULL,NULL,hInst,NULL);
+	hWnd=CreateWindow("MyClass","Uklad Sloneczny  - PaweÂ³ KwiecieÃ± -",WS_OVERLAPPEDWINDOW|WS_CLIPCHILDREN|WS_CLIPSIBLINGS,10,10,800,640,NULL,NULL,hInst,NULL);
 		
 	if(!hWnd)
 	{
