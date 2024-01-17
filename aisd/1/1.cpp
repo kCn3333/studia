@@ -4,8 +4,8 @@
 |                   wielomianu w punkcie                  |
 |            (z wykorzystaniem schematu Hornera)          |
 |                                                         |
-|                     ____________________________________|
-|                     Pawel Kwiecien gr. "PON 14:00-16:00"|
+|                                        _________________|
+|                                         Pawel Kwiecien  |
 |               g++ (GCC) 4.0.2 20051125 (Red Hat 4.0.2-8)|
 |                                                         |
 |------------------------12-03-2oo7-----------------------*/
