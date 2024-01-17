@@ -24,7 +24,6 @@
 | |                                                         |
 | | Pawel Kwiecien                          kwiecien@o2.pl  |
 | |                                                         |
-| |               AiSD gr.2 'pon 14:00-16:00'               |
 | |              Informatyka Sosowana WFiIS UJ              |
 | |                                                         |
 | +---------------------------------------------------------+
