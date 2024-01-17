@@ -1,0 +1,37 @@
+o---A-l-g-o-r-y-t-m-y--i--S-t-r-u-k-t-u-r-y--D-a-n-y-c-h--o
+|                                                         |
+|         program porownuje przeszukiwanie liniowe        |
+|               i przeszukiwanie drzewa BST               |
+|                                                         |
+|                     ____________________________________|
+|                     Pawel Kwiecien  gr. "PT 12:00-14:00"|
+|               g++ (GCC) 4.0.2 20051125 (Red Hat 4.0.2-8)|
+|                                                         |
+o---------------------------------------------------------o
+
+
+kompilacja : 	g++ -o bst.exe bst.cpp
+uruchamianie : 	./bst.exe
+
+przykladowe uzycie :
+
+[kwiecien@ibisnet bst]$ ./bst
+
+ ----------------------------------------------------
+ - porownanie przeszukiwania liniowego i drzewa BST -
+ - 1 000 razy losowa liczbe sposrod 1 000 000 liczb -
+ ----------------------------------------------------
+    
+ #generowanie danych...
+      dane wygenerowane w czasie 2.051 sek.
+             
+             
+ #szukanie w tablicy...
+              
+      czas: 5.221 sek.
+	       srednio porownan: 1000000
+                                       
+ #szukanie w BST...
+                                        
+      czas: 0.00300002 sek.
+               srednio porownan: 54

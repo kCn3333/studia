@@ -1,0 +1,122 @@
+ dopuszczalny blad < 0.001
+
+ [ rozklad Cholesky'ego ]
+ w czasie: 0.0020041466 sekund
+
+ ---- metody iteracyjne ----
+
+ [ metoda Gaussa-Seidela ]
+ zakonczono po 8 iteracjach
+ w czasie: 0.0006330013 sekund
+
+ [ metoda gradientow sprzezonych ]
+ zakonczono po 5 iteracjach
+ w czasie: 0.0004200935 sekund
+----------------------------------------------
+ dopuszczalny blad < 0.0001
+
+ [ rozklad Cholesky'ego ]
+ w czasie: 0.0026578903 sekund
+
+ ---- metody iteracyjne ----
+
+ [ metoda Gaussa-Seidela ]
+ zakonczono po 10 iteracjach
+ w czasie: 0.0010550022 sekund
+
+ [ metoda gradientow sprzezonych ]
+ zakonczono po 8 iteracjach
+ w czasie: 0.0007910728 sekund
+----------------------------------------------
+ dopuszczalny blad < 0.00001
+
+ [ rozklad Cholesky'ego ]
+ w czasie: 0.0025730133 sekund
+
+ ---- metody iteracyjne ----
+
+ [ metoda Gaussa-Seidela ]
+ zakonczono po 13 iteracjach
+ w czasie: 0.0010259151 sekund
+
+ [ metoda gradientow sprzezonych ]
+ zakonczono po 10 iteracjach
+ w czasie: 0.0008449554 sekund
+----------------------------------------------
+ dopuszczalny blad < 0.000001
+
+ [ rozklad Cholesky'ego ]
+ w czasie: 0.0023648739 sekund
+
+ ---- metody iteracyjne ----
+
+ [ metoda Gaussa-Seidela ]
+ zakonczono po 16 iteracjach
+ w czasie: 0.0012590885 sekund
+
+ [ metoda gradientow sprzezonych ]
+ zakonczono po 12 iteracjach
+ w czasie: 0.0010590553 sekund
+----------------------------------------------
+ dopuszczalny blad < 0.0000001
+
+ [ rozklad Cholesky'ego ]
+ w czasie: 0.0027170181 sekund
+
+ ---- metody iteracyjne ----
+
+ [ metoda Gaussa-Seidela ]
+ zakonczono po 19 iteracjach
+ w czasie: 0.0019960403 sekund
+
+ [ metoda gradientow sprzezonych ]
+ zakonczono po 15 iteracjach
+ w czasie: 0.0016880035 sekund
+----------------------------------------------
+ dopuszczalny blad < 0.00000001
+
+ [ rozklad Cholesky'ego ]
+ w czasie: 0.0020251274 sekund
+
+ ---- metody iteracyjne ----
+
+ [ metoda Gaussa-Seidela ]
+ zakonczono po 19 iteracjach
+ w czasie: 0.0014939308 sekund
+
+ [ metoda gradientow sprzezonych ]
+ zakonczono po 17 iteracjach
+ w czasie: 0.0014312267 sekund
+----------------------------------------------
+ dopuszczalny blad < 0.000000001
+
+ [ rozklad Cholesky'ego ]
+ w czasie: 0.0020051003 sekund
+
+ ---- metody iteracyjne ----
+
+ [ metoda Gaussa-Seidela ]
+ zakonczono po 41 iteracjach
+ w czasie: 0.0032210350 sekund
+
+ [ metoda gradientow sprzezonych ]
+ zakonczono po 19 iteracjach
+ w czasie: 0.0016000271 sekund
+----------------------------------------------
+ dopuszczalny blad < 0.0000000001
+
+ [ rozklad Cholesky'ego ]
+ w czasie: 0.0026650429 sekund
+
+ ---- metody iteracyjne ----
+
+ [ metoda Gaussa-Seidela ]
+ zakonczono po 48 iteracjach
+ w czasie: 0.0043799877 sekund
+
+ [ metoda gradientow sprzezonych ]
+ zakonczono po 22 iteracjach
+ w czasie: 0.0018539429 sekund
+
+
+ 

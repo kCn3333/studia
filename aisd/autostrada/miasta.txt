@@ -1,0 +1,16 @@
+Bialystok 
+Bydgoszcz 
+Gdansk 
+Katowice 
+Kielce 
+Krakow 
+Lublin
+Lodz
+Olsztyn
+Opole
+Poznan
+Rzeszow
+Szczecin
+Warszawa
+Wroclaw
+ZielonaGora

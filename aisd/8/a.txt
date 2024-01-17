@@ -1,0 +1,245 @@
+fstat (2)
+Inne wersje manuala:
+
+    * fstat (1)
+        * fstat (2)
+        
+        Nazwa
+        
+        stat, fstat, lstat - pobiera status pliku
+        
+        SkŁadnia
+        
+        #include <sys/types.h>
+        #include <sys/stat.h>
+        #include <unistd.h>
+        
+        int stat(const char *path, struct stat *buf); int fstat(int filedes, struct stat *buf); int lstat(const char *path, struct stat *buf);
+        
+        Opis
+        
+        Funkcje te zwracają informacje o podanym pliku. Do uzyskania tej informacji nie są wymagane prawa dostępu do samego pliku, lecz -- w przypadku stat() i lstat() -- konieczne są prawa wykonywania (przeszukiwania) do wszystkich katalogów na prowadzącej do pliku ścieżce path.
+        
+        stat() zwraca status pliku wskazywanego przez path, ładując go do argumentu buf.
+        
+        lstat() jest identyczny z stat(), lecz w przypadku gdy path jest linkiem symbolicznym, to zwraca status tego linka, a nie pliku, do którego się ten link odwołuje.
+        
+        fstat() jest identyczny z stat(), z tym wyjątkiem, że plik, którego status ma zwrócić, jest określony przez deskryptor pliku filedes.
+        
+        Wszystkie te funkcje zwracają strukturę stat, zawierającą następujące pola:
+        
+        struct stat {
+        
+        dev_t
+            st_dev; /* ID urządzenia zawierającego plik */ 
+            ino_t
+                st_ino; /* numer i-węzła (inode) */ umode_t st_mode; /* ochrona */ nlink_t st_nlink; /* liczba dowiązań stałych (hardlinks) */ 
+                uid_t
+                    st_uid; /* ID użytkownika właściciela */ 
+                    gid_t
+                        st_gid; /* ID grupy właściciela */ 
+                        dev_t
+                            st_rdev; /* ID urządzenia (jeśli plik specjalny) */ 
+                            off_t
+                                st_size; /* całkowity rozmiar w bajtach */ blksize_t st_blksize; /* wielkość bloku dla I/O systemu plików */ blkcnt_t st_blocks; /* liczba zaalokowanych bloków */ 
+                                time_t
+                                    st_atime; /* czas ostatniego dostępu */ 
+                                    time_t
+                                        st_mtime; /* czas ostatniej modyfikacji */ 
+                                        time_t
+                                            st_ctime; /* czas ostatniej zmiany */ };
+                                            
+                                            Pole st_dev określa urządzenie, na którym plik się znajduje.
+                                            
+                                            Pole st_rdev opisuje urządzenie reprezentowane przez ten plik (i-węzeł).
+                                            
+                                            Pole st_size podaje rozmiar pliku w bajtach (jeżeli plik jest regularny lub jest dowiązaniem symbolicznym). Rozmiarem dowiązania symbolicznego jest długość ścieżki, na którą wskazuje, z wyłączeniem końcowego bajtu null.
+                                            
+                                            Pole st_sblocks określa liczbę bloków zajmowanych przez plik w jednostkach 512-bajtowych. (Liczba ta może być mniejsza niż st_size/512, na przykład wtedy, gdy plik ma dziury).
+                                            
+                                            Pole st_blksize zawiera “preferowany” rozmiar bloku dla efektywnych operacji wejścia/wyjścia dla pliku (Zapis do pliku mniejszych kawałków może spowodować nieefektywne operacje odczyt-modyfikacja-powtórny zapis).
+                                            
+                                            Nie wszystkie systemy plików pod Linuksem obsługują wszystkie pola czasu. Niektóre systemy plików można zamontować w ten sposób, że dostęp do pliku nie powoduje uaktualnienia pola st_atime. (Patrz ‘noatime’ w mount(8) ).
+                                            
+                                            Pole st_atime jst zmieniane przez dostęp do pliku, np. przez execve(2) , mknod(2) , pipe(2) , utime(2) i read(2) (w razie odczytania więcej niż zera bajtów). Inne procedury, jak mmap(2) mogą, ale nie muszą, zmienić st_atime.
+                                            
+                                            Zazwyczaj pole st_mtime jest zmieniane przez modyfikowanie pliku, np. przez mknod(2) , truncate(2) , utime(2) i write(2) (więcej niż zero bajtów). Co więcej st_mtime katalogu jest zmieniane przy tworzeniu plików w tym katalogu lub ich usuwaniu. Pole st_mtime nie jest zmieniane po zmianach właściciela, grupy, liczby twardych linków (hardlinks) czy praw dowiązań.
+                                            
+                                            Pole st_ctime jest zmieniane przy zapisywaniu lub ustawianiu informacji i-węzła (np. właściciela, grupy, liczby dowiązań, praw itp.).
+                                            
+                                            Zdefiniowane są następujące makra POSIX sprawdzające typ pliku przy użyciu pola st_mode:
+                                            
+                                            S_ISREG(m) czy plik jest regularny?
+                                            
+                                            S_ISDIR(m) katalog?
+                                            
+                                            S_ISCHR(m) urządzenie znakowe?
+                                            
+                                            S_ISBLK(m) urządzenie blokowe?
+                                            
+                                            S_ISFIFO(m) kolejka FIFO (potok nazwany)?
+                                            
+                                            S_ISLNK(m) dowiązanie symboliczne? (Nie w POSIX.1-1996).
+                                            
+                                            S_ISSOCK(m) gniazdo? (Nie w POSIX.1-1996).
+                                            
+                                            Dla pola st_mode zdefiniowano następujące flagi:
+                                            
+                                            S_IFMT
+                                                0170000 maska bitowa dla pól bitowych typu pliku S_IFSOCK 0140000 gniazdo 
+                                                S_IFLNK
+                                                    0120000 dowiązanie symboliczne (symbolic link) 
+                                                    S_IFREG
+                                                        0100000 plik regularny 
+                                                        S_IFBLK
+                                                            0060000 urządzenie blokowe S_IFDIR 0040000 katalog 
+                                                            S_IFCHR
+                                                                0020000 urządzenie znakowe 
+                                                                S_IFIFO
+                                                                    0010000 kolejka FIFO 
+                                                                    S_ISUID
+                                                                        0004000 bit ‘set UID’ 
+                                                                        S_ISGID
+                                                                            0002000 bit ‘set-group-ID’ (patrz niżej) 
+                                                                            S_ISVTX
+                                                                                0001000 bit ‘sticky’ (patrz niżej) 
+                                                                                S_IRWXU
+                                                                                    00700 maska praw dostępu właściciela pliku 
+                                                                                    S_IRUSR
+                                                                                        00400 właściciel ma prawa odczytu 
+                                                                                        S_IWUSR
+                                                                                            00200 właściciel ma prawa zapisu S_IXUSR 00100 właściciel ma prawa wykonania 
+                                                                                            S_IRWXG
+                                                                                                00070 maska praw dostępu dla grupy 
+                                                                                                S_IRGRP
+                                                                                                    00040 grupa ma prawa odczytu 
+                                                                                                    S_IWGRP
+                                                                                                        00020 grupa ma prawa zapisu 
+                                                                                                        S_IXGRP
+                                                                                                            00010 grupa ma prawa wykonania 
+                                                                                                            S_IRWXO
+                                                                                                                00007 maska uprawnień dla innych (poza grupą) 
+                                                                                                                S_IROTH
+                                                                                                                    00004 inni mają prawa odczytu 
+                                                                                                                    S_IWOTH
+                                                                                                                        00002 inni mają prawa zapisu
+                                                                                                                        
+                                                                                                                        S_IXOTH
+                                                                                                                            00001 inni mają prawa wykonania
+                                                                                                                            
+                                                                                                                            Bit ‘set-group-ID’ (S_ISGID) ma kilka specjalnych znaczeń. Ustawiony na katalogu oznacza, że dla tego katalogu powinna być używana semantyka BSD: pliki w nim utworzone dziedziczą identyfikator grupy z katalogu, a nie z efektywnego identyfikatora grupy procesu tworzącego plik, a tworzone katalogi będą miały także ustawiony bit S_ISGID. Dla pliku, który nie ma ustawionego bitu wykonywania dla grupy (S_IXGRP), bit ‘set-group-ID’ oznacza obowiązkowe blokowanie pliku/rekordu.
+                                                                                                                            
+                                                                                                                            Bit ‘sticky’ (S_ISVTX) ustawiony na katalogu oznacza, że tylko właściciel pliku lub właściciel katalogu, lub proces uprzywilejowany może usunąć plik w tym katalogu lub zmienić nazwę tego pliku.
+                                                                                                                            
+                                                                                                                            Uwagi Linuksowe
+                                                                                                                            
+                                                                                                                            Od wersji jądra struktura stat obsługuje nanosekundową dokładność wszystkich trzech pól czasowych. Glibc podaje nanosekundową część każdego z tych pól, używając albo st_atim.tv_nsec, jeżeli zdefiniowano makro _BSD_SOURCE lub _SVID_SOURCE, albo st_atimensec, jeżeli nie zdefiniowano żadnego z tych makr. W systemach plików, które nie obsługują takiej dokładności czasowej, wartości nanosekund w tych polach wynoszą 0.
+                                                                                                                            
+                                                                                                                            Dla większości plików w katalogu /proc, stat() w polu st_size zwraca 0, a nie rzeczywisty rozmiar pliku.
+                                                                                                                            
+                                                                                                                            WartoŚĆ Zwracana
+                                                                                                                            
+                                                                                                                            Po sukcesie zwracane jest zero. Po błędzie -1 i ustawiane jest errno.
+                                                                                                                            
+                                                                                                                            BŁĘdy
+                                                                                                                            
+                                                                                                                            EACCES Brak uprawnień do przeszukiwania jednego z katalogów w ścieżce zaczynającej path. (Patrz także path_resolution(2) ).
+                                                                                                                            
+                                                                                                                            EBADF filedes jest nieprawidłowy.
+                                                                                                                            
+                                                                                                                            EFAULT Niepoprawny adres.
+                                                                                                                            
+                                                                                                                            ELOOP Podczas rozwiązywania ścieżki napotkano zbyt wiele dowiązań symbolicznych.
+                                                                                                                            
+                                                                                                                            ENAMETOOLONG
+                                                                                                                                Zbyt długa nazwa pliku.
+                                                                                                                                
+                                                                                                                                ENOENT Składnik ścieżki path nie istnieje lub ścieżka jest pustym łańcuchem znaków.
+                                                                                                                                
+                                                                                                                                ENOMEM Brak pamięci (tj. pamięci jądra).
+                                                                                                                                
+                                                                                                                                ENOTDIR
+                                                                                                                                    Składnik ścieżki nie jest katalogiem.
+                                                                                                                                    
+                                                                                                                                    Zgodne Z
+                                                                                                                                    
+                                                                                                                                    Funkcje stat() i fstat() są zgodne z SVr4, SVID, POSIX, X/OPEN, 4.3BSD. Funkcja lstat() jest zgodna z 4.3BSD i SVr4. SVr4 dokumentuje następujące dodatkowe błędy fstat(): EINTR, ENOLINK i EOVERFLOW. SVr4 dokumentuje następujące dodatkowe błędy stat() i lstat(): EINTR, EMULTIHOP, ENOLINK i EOVERFLOW. Używanie pól st_blocks i st_blksize może być mało przenośne. (Zostały wprowadzone w BSD, nie są podawane przez POSIX. Interpretacja różni się między systemami, a nawet na jednym systemie, jeżeli zaangażowane są montowania NFS).
+                                                                                                                                    
+                                                                                                                                    Standard POSIX nie opisuje bitów S_IFMT, S_IFSOCK, S_IFLNK, S_IFREG, S_IFBLK, S_IFDIR, S_IFCHR, S_IFIFO, S_ISVTX, ale zamiast tego wymaga używania makr S_ISDIR(), itp. Makra S_ISLNK i S_ISSOCK nie występują w POSIX.1-1996, ale oba będą w następnej wersji standardu POSIX; pierwsze z tych makr jest wzięte z SVID, a drugie z SUSv2.
+                                                                                                                                    
+                                                                                                                                    Unix V7 (i kolejne systemy) miał S_IREAD, S_IWRITE, S_IEXEC, podczas gdy POSIX nakazuje używanie S_IRUSR, S_IWUSR, S_IXUSR.
+                                                                                                                                    
+                                                                                                                                    Inne Systemy
+                                                                                                                                    
+                                                                                                                                    Wartości, które były (lub nadal są) w użyciu w różnych systemach:
+                                                                                                                                    
+                                                                                                                                    szesnastkowo nazwa ls ósemkowo opis
+                                                                                                                                    
+                                                                                                                                    f000
+                                                                                                                                        S_IFMT 170000 maska bitowa dla pól bitowych typu pliku 
+                                                                                                                                        0000
+                                                                                                                                            000000 niedziałający i-węzeł w SCO, nieznany typ w BSD SVID-v2 i XPG2 mają zarówno 0, jak i 0100000 dla zwykłego pliku 
+                                                                                                                                            1000
+                                                                                                                                                S_IFIFO p| 010000 kolejka FIFO (potok nazwany) 
+                                                                                                                                                2000
+                                                                                                                                                    S_IFCHR c 020000 specjalny znakowy (V7) 
+                                                                                                                                                    3000
+                                                                                                                                                        S_IFMPC 030000 specjalny znakowy zwielokrotniony (V7) 
+                                                                                                                                                        4000
+                                                                                                                                                            S_IFDIR d/ 040000 katalog (V7) 
+                                                                                                                                                            5000
+                                                                                                                                                                S_IFNAM 050000 nazwany plik specjalny XENIXa z dwoma podtypami, rozróżnianymi przez wartości 1,2 w st_rdev: 
+                                                                                                                                                                0001
+                                                                                                                                                                    S_INSEM s 000001 podtyp IFNAM semafora XENIX 
+                                                                                                                                                                    0002
+                                                                                                                                                                        S_INSHD m 000002 podtyp IFNAM dzielonych danych XENIX 
+                                                                                                                                                                        6000
+                                                                                                                                                                            S_IFBLK b 060000 specjalny blokowy (V7) 
+                                                                                                                                                                            7000
+                                                                                                                                                                                S_IFMPB 070000 specjalny blokowy zwielokrotniony (V7) 
+                                                                                                                                                                                8000
+                                                                                                                                                                                    S_IFREG - 100000 regularny (V7) 
+                                                                                                                                                                                    9000
+                                                                                                                                                                                        S_IFCMP 110000 skompresowany VxFS 
+                                                                                                                                                                                        9000
+                                                                                                                                                                                            S_IFNWK n 110000 sieciowy specjalny (HP-UX) 
+                                                                                                                                                                                            a000
+                                                                                                                                                                                                S_IFLNK l@ 120000 dowiązanie symboliczne (BSD) 
+                                                                                                                                                                                                b000
+                                                                                                                                                                                                    S_IFSHAD 130000 shadow i-węzeł ACL w Solarisie (niedost. w przestrz. użytkow.) 
+                                                                                                                                                                                                    c000
+                                                                                                                                                                                                        S_IFSOCK s= 140000 gniazdo (BSD; także “S_IFSOC” na VxFS) 
+                                                                                                                                                                                                        d000
+                                                                                                                                                                                                            S_IFDOOR D> 150000 drzwi Solarisa 
+                                                                                                                                                                                                            e000
+                                                                                                                                                                                                                S_IFWHT w% 160000 BSD whiteout (nieużywane dla i-węzła)
+                                                                                                                                                                                                                
+                                                                                                                                                                                                                0200
+                                                                                                                                                                                                                    S_ISVTX 001000 ‘bit sticky’: zachowaj wyswappowany tekst nawet po użyciu(V7) zarezerwowane (SVID-v2) Dla niekatalogów: nie buforuj tego pliku (SunOS) Dla katalogów: flaga ograniczonego usuwania (SVID-v4.2) 
+                                                                                                                                                                                                                    0400
+                                                                                                                                                                                                                        S_ISGID 002000 set-group-ID podczas wykonywania (V7) dla katalogów: używaj semantyki BSD propagowania ID grupy 
+                                                                                                                                                                                                                        0400
+                                                                                                                                                                                                                            S_ENFMT 002000 egzekwowanie blokowanie plików SysV (dzielone z S_ISGID) 
+                                                                                                                                                                                                                            0800
+                                                                                                                                                                                                                                S_ISUID 004000 set-user-ID podczas wykonywania (V7) 
+                                                                                                                                                                                                                                0800
+                                                                                                                                                                                                                                    S_CDF 004000 katalog jest plikiem zależnym od kontekstu (HP-UX)
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    Polecenie ‘sticky’ pojawiło się w wersji32V systemu AT&T UNIX.
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    Zobacz TakŻe
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    chmod(2) , chown(2) , fstatat(2) , readlink(2) , utime(2) , capabilities(7)
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                    Table of Contents
+                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                        * Nazwa
+                                                                                                                                                                                                                                            * SkŁadnia
+                                                                                                                                                                                                                                                * Opis
+                                                                                                                                                                                                                                                    * Uwagi Linuksowe
+                                                                                                                                                                                                                                                        * WartoŚĆ Zwracana
+                                                                                                                                                                                                                                                            * BŁĘdy
+                                                                                                                                                                                                                                                                * Zgodne Z
+                                                                                                                                                                                                                                                                    * Inne Systemy
+                                                                                                                                                                                                                                                                        * Zobacz TakŻe
+                                                                                                                                                                                                                                                                        

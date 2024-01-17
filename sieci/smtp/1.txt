@@ -1,0 +1,4 @@
+FROM: klient_smtp
+TO: user
+SUBJECT: wiadomosc testowa
+Przykladowa wiadomosc e-mail.
