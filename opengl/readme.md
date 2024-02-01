@@ -1,2 +1,2 @@
 Symulator Układu Słoneczenego
-  -gcc freeglut
+VC++ 6.0
