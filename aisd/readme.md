@@ -1,4 +1,5 @@
 Algorytmy i Struktury Danych
+------------------------------------------------------------------
   1) program do liczenia wartości wielomianu w punkcie - schemat Hornera
   2) program wyliczający wartosci trzydziestu początkowych liczb Catalana
   3) wielomiany Czebyszewa 
