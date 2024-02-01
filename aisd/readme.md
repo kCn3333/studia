@@ -1,21 +1,21 @@
 Algorytmy i Struktury Danych
   1) program do liczenia wartości wielomianu w punkcie - schemat Hornera
   2) program wyliczający wartosci trzydziestu początkowych liczb Catalana
-  4) 
-  5) wielomiany Czebyszewa
-  6) mnożenie macierzy - algorytm Strassena
-  7) kodowanie tekstu - RSA
-  8) program do liczenia wartości funkcji Eulera
-  9) prosty program do kompresji danych
-  10) rachunek prawdopodobieństwa, wybór scieżki
-  11) mnożenie dużych liczb - algorytm Karatsuby
-  12) reprezentacja grafu poprzez listę sąsiedzctwa
-  13) reprezentacja grafu poprzez macierz sąsiedzctwa
-  14) lista jednokierunkowa
-  15) drzewo AVL
-  16) drzewo BST - porównanie przeszukiwania i przeszukiwania liniowego
-  17) skojarzenie doskonałe - metoda MonteCarlo dla grafu K(n,n) dwudzielnego
-  18) program wyznacza minimalne drzewo rozpinające - algorytm Kruskala
-  19) program wyznacza najkrótsze połączenia w grafie - algorytm Floyda-Warshalla
-  20) porównanie szybkości algorytmów do wyszukiwania wzorca - brute force, KMP (Knuth, Moris, Prat), Rabina Karpa, Boyer'a Moore'a
+  3) wielomiany Czebyszew 
+  4) program sprawdzający czy dany punkt należy do wielokąta  
+  5) mnożenie macierzy - algorytm Strassena
+  6) kodowanie tekstu - RSA
+  7) program do liczenia wartości funkcji Eulera
+  8) prosty program do kompresji danych
+  9) rachunek prawdopodobieństwa, wybór scieżki
+  10) mnożenie dużych liczb - algorytm Karatsuby
+  11) reprezentacja grafu poprzez listę sąsiedzctwa
+  12) reprezentacja grafu poprzez macierz sąsiedzctwa
+  13) lista jednokierunkowa
+  14) drzewo AVL
+  15) drzewo BST - porównanie przeszukiwania i przeszukiwania liniowego
+  16) skojarzenie doskonałe - metoda MonteCarlo dla grafu K(n,n) dwudzielnego
+  17) program wyznacza minimalne drzewo rozpinające - algorytm Kruskala
+  18) program wyznacza najkrótsze połączenia w grafie - algorytm Floyda-Warshalla
+  19) porównanie szybkości algorytmów do wyszukiwania wzorca - brute force, KMP (Knuth, Moris, Prat), Rabina Karpa, Boyer'a Moore'a
 
