@@ -3,7 +3,7 @@
 
 Gra kółko i krzyżyk
 
-2 ) Miejsce zerowe dowolnej funkcji (przy uzyciu interfejsów)
+2) Miejsce zerowe dowolnej funkcji (przy uzyciu interfejsów)
 
 3) Porównanie szybkości działania wyszukiwania binarnego i losowego
       (dla zgadywania liczb)
@@ -12,9 +12,9 @@ Gra kółko i krzyżyk
 
 5) Szyfr Cezara (klasa rozszerzająca InputStream i OutputStream)
 
-6 ) Wielowątkowe sortowanie przez scalanie
+6) Wielowątkowe sortowanie przez scalanie
 
-7 ) Prosty kalkulator na liczbach typu double
+7) Prosty kalkulator na liczbach typu double
 
 8) Paint - program rysujacy v1.0
 
