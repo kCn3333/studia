@@ -1,7 +1,7 @@
   Java	
   ---------------------------------------------------
 
-1) Gra kółko i krzyżyk
+1) Gra w zgadywanie liczb
 
 2) Miejsce zerowe dowolnej funkcji (przy uzyciu interfejsów)
 
@@ -22,11 +22,10 @@
 
 10) Paint - program rysujacy v2.0 (rysowanie przez siec, zapis do jpg, zapis
       i odczyt z xml)
-
-
-
 11) Gomoku - gra sieciowa v2.0 (zapis stanu gry do jpg, zapis i odczyt z xml)
       (klient i serwer)
+
+12) Gra kółko i krzyżyk
 
 
 wzorce projektowe	
