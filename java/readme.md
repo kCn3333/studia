@@ -25,3 +25,13 @@ Gomoku - gra sieciowa v1.0 (klient i serwer)
 
 Gomoku - gra sieciowa v2.0 (zapis stanu gry do jpg, zapis i odczyt z xml)
       (klient i serwer)
+
+
+wzorce projektowe	
+-------------------------
+
+Singleton
+
+Iterator
+
+Builder
