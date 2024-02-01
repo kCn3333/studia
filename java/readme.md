@@ -1,7 +1,7 @@
   Java	
   ---------------------------------------------------
 
-1) Gra w zgadywanie liczb
+1) Gra zgadywanie liczb
 
 2) Miejsce zerowe dowolnej funkcji (przy uzyciu interfejsów)
 
