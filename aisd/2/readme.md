@@ -1,0 +1,1 @@
+program wyliczający wartosci trzydziestu początkowych liczb Catalana
