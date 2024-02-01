@@ -1,7 +1,7 @@
 Algorytmy i Struktury Danych
   1) program do liczenia wartości wielomianu w punkcie - schemat Hornera
   2) program wyliczający wartosci trzydziestu początkowych liczb Catalana
-  3) wielomiany Czebyszew 
+  3) wielomiany Czebyszewa 
   4) program sprawdzający czy dany punkt należy do wielokąta  
   5) mnożenie macierzy - algorytm Strassena
   6) kodowanie tekstu - RSA
