@@ -1,7 +1,5 @@
 /*
 Pawel Kwiecien
-Program zaliczeniowy cwiczen z Programowania I (jezyk C)
-I rok Informatyki Stosowanej UJ
 
 plik nalezy kompilowac z parametrem -lm (linkowanie funkcji matematycznych)
 */
