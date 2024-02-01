@@ -1,8 +1,5 @@
 /*
 Pawel Kwiecien
-Program zaliczeniowy cwiczen z Programowania I (jezyk C)
-I rok Informatyki Stosowanej UJ
-
 program wymaga zlinkowania biblioteki conio2 '-lconio'
 */
 #include <stdio.h>
