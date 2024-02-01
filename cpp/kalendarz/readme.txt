@@ -1,9 +1,9 @@
 kalendarz.cpp data.cpp data.h im.txt
 
-[ ------- zestaw 3 / kalendarz ---------]
+[ ------- kalendarz ---------]
 |---------------------------------------|
 | g++ (GCC) 4.0.2     (Red Hat 4.0.2-8) |
-| Pawel Kwiecien   gr.1 SRO 10:00-12:00 |
+| 			Pawel Kwiecien  |
 |---------------------------------------|
 
 obsluga :
