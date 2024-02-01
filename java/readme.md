@@ -1,7 +1,7 @@
   Java	
   ---------------------------------------------------
 
-Gra kółko i krzyżyk
+1) Gra kółko i krzyżyk
 
 2) Miejsce zerowe dowolnej funkcji (przy uzyciu interfejsów)
 
