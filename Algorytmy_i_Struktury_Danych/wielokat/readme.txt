@@ -1,0 +1,1 @@
+program sprawdzający czy dany punkt należy do wielokąta  

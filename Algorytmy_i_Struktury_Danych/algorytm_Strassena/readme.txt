@@ -1,0 +1,1 @@
+mnożenie macierzy algorytmem Strassena

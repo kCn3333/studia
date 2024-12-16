@@ -1,0 +1,1 @@
+program do liczenia wartości funkcji Eulera (wypisuje rownież liczby względnie pierwsze)

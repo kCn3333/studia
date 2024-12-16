@@ -1,0 +1,1 @@
+prosty program do kompresji danych

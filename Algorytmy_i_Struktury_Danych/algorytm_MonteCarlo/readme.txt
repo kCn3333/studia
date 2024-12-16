@@ -1,0 +1,1 @@
+program wyznacza skojarzenie doskonałe metodą MonteCarlo dla grafu Kn,n dwudzielnego (z pliku graf.txt)
