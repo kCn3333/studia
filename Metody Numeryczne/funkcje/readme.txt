@@ -1,0 +1,1 @@
+Znajdowanie minimum funkcji - metoda Brent'a

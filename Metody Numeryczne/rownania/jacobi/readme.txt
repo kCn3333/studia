@@ -1,0 +1,1 @@
+rozwiazywanie równań Ax=b metodą Jacobiego 
