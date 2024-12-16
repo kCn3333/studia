@@ -1,0 +1,2 @@
+protokół UDP
+klient - serwer
