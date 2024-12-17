@@ -1,16 +1,19 @@
-o---A-l-g-o-r-y-t-m-y--i--S-t-r-u-k-t-u-r-y--D-a-n-y-c-h--o
-|							  |
-|         program porownuje przeszukiwanie liniowe        |
-|		i przeszukiwanie drzewa BST               |
-|                                                         |
-|                                                         |
-o---------------------------------------------------------o
+Drzewo BST
+----------
 
-kompilacja : 	g++ -o bst.exe bst.cpp
-uruchamianie : 	./bst.exe
+program porownuje przeszukiwanie liniowe i przeszukiwanie drzewa BST
+
+kompilacja : 	
+```
+g++ -o bst.exe bst.cpp
+```
+uruchamianie : 	
+```
+./bst.exe
+```
 
 przykladowe uzycie :
-
+```
  ./bst
 
  ----------------------------------------------------
@@ -31,3 +34,4 @@ przykladowe uzycie :
                                         
       czas: 0.00300002 sek.
                srednio porownan: 54
+```
