@@ -1,7 +1,7 @@
 Drzewo BST
 ----------
 
-program porownuje przeszukiwanie liniowe i przeszukiwanie drzewa BST
+program porównuje przeszukiwanie liniowe i przeszukiwanie drzewa BST
 
 kompilacja : 	
 ```
