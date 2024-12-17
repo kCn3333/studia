@@ -1,15 +1,16 @@
 program wyznacza najkrótsze drogi z Krakowa do poszczególnych miast wojewódzkich
 za pomoca algorytmu Floyda-Warshalla
+---------------------------------
 
 
 g++ (GCC) 4.0.2 (Red Hat 4.0.2-8)
----------------------------------
+
 
 uruchamianie :
 ```
 		make droga 
 		./droga
-
+```
 dane wprowadzne sa z pliku polska.txt
 format danych: 
 1 2 100
@@ -31,4 +32,4 @@ co oznacza polaczenie miedzy miastem 1 a 2 o wadze 100
 14.Warszawa 
 15.Wroclaw 
 16.ZielonaGora
-```
+
