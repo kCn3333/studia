@@ -1,5 +1,7 @@
-drzewo avl, dodaje alementy do drzewa i wypisuje je w porządku rosnącym
------------------------------------------------------------------------
+Drzewo AVL 
+-----------
+
+dodaje alementy do drzewa i wypisuje je w porządku rosnącym
 
 kompilacja: 	
 ```
