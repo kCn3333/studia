@@ -3,6 +3,7 @@ Drzewo BST
 
 program porównuje przeszukiwanie liniowe i przeszukiwanie drzewa BST
 
+
 kompilacja : 	
 ```
 g++ -o bst.exe bst.cpp
